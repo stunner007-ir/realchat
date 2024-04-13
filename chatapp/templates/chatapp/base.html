@@ -18,12 +18,20 @@
             </a>
 
             <div class="w block w-auto">
+                {% if user.is_authenticated %}
                 <ul class="flex flex-row p-4 mt-4 border rounded-lg border-grey-100 bg-blue-50">
                     <li><a class="block py-2 pl-3 pr-4 rounded bg-blue-500 text-white" href="/rooms/">Rooms </a></li>
-                    <li><a class="block py-2 pl-3 pr-4 rounded bg-yellow-700 text-white" href="">About</a></li>
-                    <li><a class="block py-2 pl-3 pr-4 rounded bg-yellow-700 text-white"
-                            href="{% url 'logout' %}">Logout</a></li>
+                    <li><a class="block py-2 pl-3 pr-4 rounded bg-red-600 text-black" href="{% url 'logout' %}">Logout
+                        </a></li>
+                    <li>Welcome {{user}}</li>
                 </ul>
+                {% else %}
+                <ul class="flex flex-row p-4 mt-4 border rounded-lg border-grey-100 bg-blue-50">
+                    <li><a class="block py-2 pl-3 pr-4 rounded bg-blue-500 text-white" href="/rooms/">Rooms </a></li>
+                    <li><a class="block py-2 pl-3 pr-4 rounded bg-green-700 text-white"
+                            href="{% url 'logout' %}">Login</a></li>
+                </ul>
+                {% endif %}
             </div>
         </div>
     </nav>

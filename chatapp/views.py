@@ -7,8 +7,9 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 def index(request):
+    user = request.user
     chatrooms = ChatRoom.objects.all()
-    context = {'chatrooms': chatrooms}
+    context = {'chatrooms': chatrooms,'user':user}
     return render(request, 'chatapp/index.html', context)
 
 

@@ -2,12 +2,22 @@
 {% block content %}
 
 <h1 class="font-bold m-10">List of Rooms</h1>
+{% if user.is_authenticated %}
 
 {%for chatroom in chatrooms %}
-{% if user.is_authenticated %}
 <div class="shadow-lg p-10 m-10 bg-blue-500 text-white rounded-lg">
     <a href="{% url 'chatroom' chatroom.slug %}">{{chatroom.name}}</a><br>
 </div>
-{% endif %}
+
 {% endfor %}
+{% else %}
+
+<div class="w text-xl">
+    Please Login/Register To Chat
+    <div class="block py-2 pl-3 pr-4 rounded bg-blue-500 text-white">
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+</div>
+
+{% endif %}
 {% endblock %}

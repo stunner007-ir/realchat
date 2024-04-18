@@ -1,0 +1,16 @@
+{% extends "chatapp/base.html" %}
+{% block content %}
+<div class="content-section" style="display: flex; justify-content: center; align-items: center; margin-top:3rem;">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ user.profile.image.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Username : {{ user.username }}</h5>
+      <h5 class="card-title">Email : {{ user.email }}</h5>
+      <h5 class="card-title">Location : {{ profile.location }}</h5>
+      <p class="card-text">Bio : {{ profile.bio }}</p>
+    </div>
+  </div>  
+</div>
+
+
+{% endblock content%}

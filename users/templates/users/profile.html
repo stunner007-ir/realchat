@@ -1,16 +1,18 @@
 {% extends "chatapp/base.html" %}
+
 {% block content %}
 <div class="content-section" style="display: flex; justify-content: center; align-items: center; margin-top:3rem;">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{ user.profile.image.url }}" alt="Card image cap">
+  <div class="card" style="width: 18rem; border: 2px solid black;">
+    <div class="card-img-top" style="height: 10rem; background-image: url('{{ user.profile.image.url }}'); background-size: cover; background-position: center;"></div>
     <div class="card-body">
-      <h5 class="card-title">Username : {{ user.username }}</h5>
-      <h5 class="card-title">Email : {{ user.email }}</h5>
-      <h5 class="card-title">Location : {{ profile.location }}</h5>
-      <p class="card-text">Bio : {{ profile.bio }}</p>
+      <h5 class="card-title" style="border-bottom: 1px solid black;">Username: {{ user.username }}</h5>
+      <h5 class="card-title" style="border-bottom: 1px solid black;">Email: {{ user.email }}</h5>
+      <h5 class="card-title" style="border-bottom: 1px solid black;">Location: {{ profile.location }}</h5>
+      <p class="card-text" style="border-bottom: 1px solid black;">Bio: {{ profile.bio }}</p>
+      <a class="block py-2 pl-3 pr-4 rounded bg-green-500 text-white"
+                            href="{% url 'edit-profile' %}">Edit Profile </a>
     </div>
-  </div>  
+  </div>
 </div>
 
-
-{% endblock content%}
+{% endblock content %}

@@ -45,9 +45,7 @@
     )
     chatSocket.onmessage = function (e) {
         const data = JSON.parse(e.data)
-        console.log(data.message)
         if (data.message) {
-            console.log('Recieved message to client is', data.message)
             let html = '<div class="message shadow-lg p-3 m-3 rounded-lg w-1/2 bg-blue-400">' +
                 '<div class="text-sm text-gray-600">' +
                 data.username + ' </div> ' + data.message +
@@ -66,7 +64,6 @@
         e.preventDefault()
         const messageInput = document.getElementById('message-input')
         const message = messageInput.value
-        console.log(message)
 
         chatSocket.send(JSON.stringify({
             'message': message,

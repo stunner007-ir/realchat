@@ -9,7 +9,7 @@ RealChat is a Django-based real-time chat web application that utilizes websocke
 - Django 3.2 or higher
 - pip (Python package manager)
 - Frontend (HTML, CSS, JAVASCRIPT)
-- Database - MySQL
+- Database - SQLite
 
 ## Features
 
